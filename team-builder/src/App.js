@@ -24,11 +24,17 @@ function App() {
   const [ newForm, setNewForm ] = useState(initialForm)
   const [ members, setMembers ] = useState(initialMember)
   
+  const onChange = event => {
+
+  }
+  const onSubmit = event => {
+
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <MemberForm values={newForm} onChange='' onSubmit='' />
+        <MemberForm value={newForm} onChange={onChange} onSubmit={onSubmit} />
 
         {members.map(member => {
           return (

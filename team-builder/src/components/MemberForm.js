@@ -9,19 +9,35 @@ const MemberForm = props => {
 
                 <div className='FormInputs'>
                     <label>Member Name:&nbsp;
-                        <input />
+                        <input 
+                            type='text' 
+                            name='name' 
+                            value={value.name} 
+                            onChange={onChange}
+                        />
                     </label>
 
                     <label>Member Email:&nbsp;
-                        <input />
+                    <input 
+                            type='email' 
+                            name='email' 
+                            value={value.email} 
+                            onChange={onChange}
+                        />
                     </label>
 
-                    <select>Member Role:&nbsp;
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                    </select>
+                    <label>Member Role:&nbsp;
+                        <select
+                            name='role'
+                            value={value.role}
+                            onChange={onChange}
+                        >
+                            <option>--Select a Team Role--</option>
+                            <option>Front-End</option>
+                            <option>Back-End</option>
+                            <option>Designer</option>
+                        </select>
+                    </label>
                 </div>
                    
             </form>
