@@ -10,7 +10,7 @@ const initialMember = [
     id : uuid(),
     name : 'Shaun',
     email : 'shaundlee.0103@gmail.com',
-    role : 'Frontend Developer'
+    role : 'Front-End Engineer'
   }
 ]
 const initialForm = {
@@ -25,10 +25,25 @@ function App() {
   const [ members, setMembers ] = useState(initialMember)
   
   const onChange = event => {
+    const { name, value } = event.target
 
+    setNewForm(
+      {
+        ...newForm, [name]:value
+      })
   }
-  const onSubmit = event => {
 
+   const onSubmit = event => {
+    event.preventDefault()
+
+    if( !newForm.name || !newForm.email || !newForm.role) {
+      return 
+    }
+
+    const newMember = {...newForm, id:uuid()}
+
+    setMembers([...members, newMember])
+    setNewForm(initialForm)
   }
 
   return (

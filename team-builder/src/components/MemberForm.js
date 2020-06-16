@@ -5,7 +5,7 @@ const MemberForm = props => {
 
     return (
         <div>
-            <form>
+            <form className='MemberForm' onSubmit={onSubmit}>
 
                 <div className='FormInputs'>
                     <label>Member Name:&nbsp;
@@ -32,16 +32,19 @@ const MemberForm = props => {
                             value={value.role}
                             onChange={onChange}
                         >
-                            <option>--Select a Team Role--</option>
-                            <option>Front-End</option>
-                            <option>Back-End</option>
-                            <option>Designer</option>
+                            <option value=''>--Select a Team Role--</option>
+                            <option value='Front-End Engineer'>Front-End</option>
+                            <option value='Back-End Engineer'>Back-End</option>
+                            <option value='Designer'>Designer</option>
                         </select>
                     </label>
                 </div>
                    
+                   <div className='submitForm'>
+                       <p>Add Member to Team!</p>
+                        <button className='SubmitButton'>Submit</button>
+                   </div>
             </form>
-            <p>I am the Member Form!</p>
         </div>
     )
 }
